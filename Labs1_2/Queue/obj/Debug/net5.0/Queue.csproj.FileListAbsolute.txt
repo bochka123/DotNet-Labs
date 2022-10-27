@@ -1,0 +1,12 @@
+F:\KPI\5 семестр\.net\Labs1_2\Queue\bin\Debug\net5.0\Queue.deps.json
+F:\KPI\5 семестр\.net\Labs1_2\Queue\bin\Debug\net5.0\Queue.dll
+F:\KPI\5 семестр\.net\Labs1_2\Queue\bin\Debug\net5.0\Queue.pdb
+F:\KPI\5 семестр\.net\Labs1_2\Queue\obj\Debug\net5.0\Queue.csproj.AssemblyReference.cache
+F:\KPI\5 семестр\.net\Labs1_2\Queue\obj\Debug\net5.0\Queue.GeneratedMSBuildEditorConfig.editorconfig
+F:\KPI\5 семестр\.net\Labs1_2\Queue\obj\Debug\net5.0\Queue.AssemblyInfoInputs.cache
+F:\KPI\5 семестр\.net\Labs1_2\Queue\obj\Debug\net5.0\Queue.AssemblyInfo.cs
+F:\KPI\5 семестр\.net\Labs1_2\Queue\obj\Debug\net5.0\Queue.csproj.CoreCompileInputs.cache
+F:\KPI\5 семестр\.net\Labs1_2\Queue\obj\Debug\net5.0\Queue.dll
+F:\KPI\5 семестр\.net\Labs1_2\Queue\obj\Debug\net5.0\refint\Queue.dll
+F:\KPI\5 семестр\.net\Labs1_2\Queue\obj\Debug\net5.0\Queue.pdb
+F:\KPI\5 семестр\.net\Labs1_2\Queue\obj\Debug\net5.0\ref\Queue.dll
