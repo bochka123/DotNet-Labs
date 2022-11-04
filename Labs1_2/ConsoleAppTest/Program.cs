@@ -15,9 +15,10 @@ namespace ConsoleAppTest
             queue.Enqueue("dsasddd");
             queue.Enqueue("dsddfd");
             queue.Enqueue("dssssdd");
+
+
+
             Console.WriteLine(queue.Contains("dsdd"));
-            Console.WriteLine(queue.Dequeue());
-            Console.WriteLine(queue.Peek());
         }
     }
 }

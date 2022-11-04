@@ -34,19 +34,13 @@ namespace Queue
         public bool IsSynchronized => throw new NotImplementedException();
 
         public object SyncRoot => throw new NotImplementedException();
-
-        public bool IsReadOnly => throw new NotImplementedException();
-
+            
         public void CopyTo(Array array, int index)
         {
             throw new NotImplementedException();
         }
 
-        public IEnumerator GetEnumerator()
-        {
-            return ((IEnumerable)this).GetEnumerator();
-        }
-        IEnumerator<T> IEnumerable<T>.GetEnumerator()
+        public IEnumerator<T> GetEnumerator()
         {
             QueueNode<T> current = head;
             while (current != null)
@@ -54,6 +48,10 @@ namespace Queue
                 yield return current.value;
                 current = current.Next;
             }
+        }
+        IEnumerator IEnumerable.GetEnumerator()
+        {
+            return GetEnumerator();
         }
         public void Enqueue(T element)
         {
@@ -77,6 +75,8 @@ namespace Queue
         }
         public T Peek()
         {
+            if(count == 0)
+                throw new InvalidOperationException();
             return head.value;
         }
 
@@ -89,9 +89,9 @@ namespace Queue
         public bool Contains(T element)
         {
             if (element == null) throw new ArgumentNullException("element");
-            foreach (QueueNode<T> node in this)
+            foreach (T node in this)
             {
-                if(node.value.Equals(element)) return true;
+                if(node.Equals(element)) return true;
             }
             return false;
         }

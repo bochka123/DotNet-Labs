@@ -9,14 +9,12 @@ namespace Queue
     internal class QueueNode<T>
     {
         public T value { get; set; }
-        public QueueNode<T> Next { get; set; } = null;
-        public QueueNode<T> Previous { get; set; } = null;
-        public Queue<T> queue { get; set; }
+        public QueueNode<T> Next { get; set; }
+        public QueueNode<T> Previous { get; set; }
 
         public QueueNode(T value)
         {
             this.value = value;
-            queue = null;
         }
         public override String ToString()
         {
