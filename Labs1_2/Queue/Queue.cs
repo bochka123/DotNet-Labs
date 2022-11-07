@@ -38,7 +38,7 @@ namespace Queue
 
         #region Events
         public event Action<QueueNode<T>> EventEnqueue = delegate { };
-        public event Action EventDequeue = delegate { };
+        public event Action<QueueNode<T>> EventDequeue = delegate { };
         public event Action EventClear = delegate { };
 
         protected virtual void OnEnqueue(QueueNode<T> element)
@@ -46,9 +46,9 @@ namespace Queue
             EventEnqueue.Invoke(element);
         }
 
-        protected virtual void OnDequeue()
+        protected virtual void OnDequeue(QueueNode<T> element)
         {
-            EventDequeue.Invoke();
+            EventDequeue.Invoke(element);
         }
 
         protected virtual void OnClear()
@@ -81,7 +81,7 @@ namespace Queue
             QueueNode<T> curNode = head;
             while (curNode != null)
             {
-                array.SetValue(curNode.value, index++);
+                array.SetValue(curNode.Value, index++);
                 curNode = curNode.Next;
             }
         }
@@ -93,7 +93,7 @@ namespace Queue
             QueueNode<T> current = head;
             while (current != null)
             {
-                yield return current.value;
+                yield return current.Value;
                 current = current.Next;
             }
         }
@@ -116,21 +116,32 @@ namespace Queue
             count++;
             OnEnqueue(node);
         }
+        public void Enqueue(QueueNode<T> node)
+        {
+            QueueNode<T> tempNode = tail;
+            tail = node;
+            if (count == 0)
+                head = tail;
+            else
+                tempNode.Next = tail;
+            count++;
+            OnEnqueue(node);
+        }
         public T Dequeue()
         {
             if (count == 0)
                 throw new InvalidOperationException();
-            T output = head.value;
+            T output = head.Value;
             head = head.Next;
             count--;
-            OnDequeue();
+            OnDequeue(new QueueNode<T>(output));
             return output;
         }
         public T Peek()
         {
             if(count == 0)
                 throw new InvalidOperationException();
-            return head.value;
+            return head.Value;
         }
 
         public void Clear()

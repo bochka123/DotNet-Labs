@@ -6,23 +6,23 @@ using System.Threading.Tasks;
 
 namespace Queue
 {
-    internal class QueueNode<T>
+    public class QueueNode<T>
     {
-        public T value { get; set; }
+        public T Value { get; set; }
         public QueueNode<T> Next { get; set; }
         public QueueNode<T> Previous { get; set; }
 
         public QueueNode(T value)
         {
-            this.value = value;
+            this.Value = value;
         }
         public override String ToString()
         {
-            return value.ToString();
+            return Value.ToString();
         }
         public override int GetHashCode()
         {
-            return value.GetHashCode();
+            return Value.GetHashCode();
         }
     }
 }
