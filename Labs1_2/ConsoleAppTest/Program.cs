@@ -8,9 +8,9 @@ namespace ConsoleAppTest
     {
         static void Main(string[] args)
         {
-            //commonTests();
-            //testSyncRoot();
+            commonTests();
             testEvents();
+            testSyncRoot();
         }
 
         static void commonTests()
@@ -48,6 +48,14 @@ namespace ConsoleAppTest
             Console.WriteLine($"Contains method test: {queue1.Contains(37)}");
             Console.WriteLine($"Contains method test: {queue1.Contains(30)}");
             Console.WriteLine($"Clear method test: Number of elements before clear: {queue1.Count}");
+            Console.Write("CopyTo method test: ");
+            int[] arr = new int[12];
+            queue1.CopyTo(arr, 1);
+            foreach (int i in arr)
+            {
+                Console.Write($"{i} ");
+            }
+            Console.WriteLine();
             queue1.Clear();
             Console.WriteLine($"Clear method test: Number of elements after clear: {queue1.Count}");
         }
