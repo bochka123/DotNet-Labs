@@ -41,21 +41,25 @@ namespace ConsoleAppTest
             {
                 Console.Write($" {item} ");
             }
-            Console.WriteLine();
-            QueueNode<int> element = new QueueNode<int>(5);
             queue1.Dequeue();
-            Console.WriteLine($"Dequeue method test: {queue1.Peek()}");
+            Console.WriteLine();
+            Console.Write($"Dequeue method test: ");
+            foreach (int item in queue1)
+            {
+                Console.Write($" {item} ");
+            }
+            Console.WriteLine();
+            Console.Write("CopyTo method test: ");
+            int[] arr = new int[queue1.Count];
+            queue1.CopyTo(arr, 0);
+            foreach (int i in arr)
+            {
+                Console.Write($" {i} ");
+            }
+            Console.WriteLine();
             Console.WriteLine($"Contains method test: {queue1.Contains(37)}");
             Console.WriteLine($"Contains method test: {queue1.Contains(30)}");
             Console.WriteLine($"Clear method test: Number of elements before clear: {queue1.Count}");
-            Console.Write("CopyTo method test: ");
-            int[] arr = new int[12];
-            queue1.CopyTo(arr, 1);
-            foreach (int i in arr)
-            {
-                Console.Write($"{i} ");
-            }
-            Console.WriteLine();
             queue1.Clear();
             Console.WriteLine($"Clear method test: Number of elements after clear: {queue1.Count}");
         }
