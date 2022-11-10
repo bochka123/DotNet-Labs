@@ -100,11 +100,11 @@ namespace ConsoleAppTest
             queue1.Clear();
         }
 
-        private static void EnqueueTest(QueueNode<int> element)
+        private static void EnqueueTest(object sender, QueueNode<int> element)
         {
             Console.WriteLine($"{element.Value} is Added!");
         }
-        private static void DequeueTest(QueueNode<int> element)
+        private static void DequeueTest(object sender, QueueNode<int> element)
         {
             Console.WriteLine($"{element.Value} is Removed!");
         }

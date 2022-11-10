@@ -24,6 +24,15 @@ namespace Queue
         {
             foreach (var node in nodes)
             {
+                if (node == null) throw new ArgumentNullException();
+                Enqueue(node);
+            }
+        }
+        public Queue(params QueueNode<T>[] nodes)
+        {
+            foreach (var node in nodes)
+            {
+                if (node == null) throw new ArgumentNullException();
                 Enqueue(node);
             }
         }
@@ -31,24 +40,25 @@ namespace Queue
         {
             foreach(T element in collection)
             {
+                if (element == null) throw new ArgumentNullException();
                 Enqueue(element);
             }
         }
         #endregion
 
         #region Events
-        public event Action<QueueNode<T>> EventEnqueue = delegate { };
-        public event Action<QueueNode<T>> EventDequeue = delegate { };
+        public event EventHandler<QueueNode<T>> EventEnqueue = delegate { };
+        public event EventHandler<QueueNode<T>> EventDequeue = delegate { };
         public event Action EventClear = delegate { };
 
         protected virtual void OnEnqueue(QueueNode<T> element)
         {
-            EventEnqueue.Invoke(element);
+            EventEnqueue.Invoke(this, element);
         }
 
         protected virtual void OnDequeue(QueueNode<T> element)
         {
-            EventDequeue.Invoke(element);
+            EventDequeue.Invoke(this, element);
         }
 
         protected virtual void OnClear()
@@ -74,9 +84,9 @@ namespace Queue
         public void CopyTo(Array array, int index)
         {
             if (head == null) throw new ArgumentNullException("empty collection");
-            if (array == null) throw new ArgumentNullException("array");
-            if (index < 0) throw new ArgumentOutOfRangeException("index");
-            if (array.Length - index < count) throw new ArgumentOutOfRangeException("array");
+            if (array == null) throw new ArgumentNullException("empty array");
+            if (index < 0) throw new ArgumentOutOfRangeException("index below zero");
+            if (array.Length - index < count) throw new ArgumentOutOfRangeException("small length of array");
 
             QueueNode<T> curNode = head;
             while (curNode != null)
@@ -118,6 +128,7 @@ namespace Queue
         }
         public void Enqueue(QueueNode<T> node)
         {
+            if (node == null) throw new ArgumentNullException("node");
             QueueNode<T> tempNode = tail;
             tail = node;
             if (count == 0)
