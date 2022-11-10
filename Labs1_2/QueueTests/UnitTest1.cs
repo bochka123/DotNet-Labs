@@ -24,13 +24,22 @@ namespace QueueTests
         [Test]
         public void Constructor_WithNodes()
         {
-            Queue<int> queue = new Queue<int>(new QueueNode<int>(6), new QueueNode<int>(4), new QueueNode<int>(1), new QueueNode<int>(2));
+            var node1 = new QueueNode<int>(6);
+            var node2 = new QueueNode<int>(4);
+            var node3 = new QueueNode<int>(1);
+            var node4 = new QueueNode<int>(2);
+
+            Queue<int> queue = new Queue<int>(node1, node2, node3, node4);
         }
 
         [Test]
         public void Constructor_WithNodesButOneElementNull_ArgumentNullException()
         {
-            Action action = () => new Queue<int>(new QueueNode<int>(6), null, new QueueNode<int>(1), new QueueNode<int>(2));
+            var node1 = new QueueNode<int>(6);
+            var node2 = new QueueNode<int>(4);
+            var node3 = new QueueNode<int>(1);
+
+            Action action = () => new Queue<int>(node1, node2, null, node3);
 
             action.Should().Throw<ArgumentNullException>();
         }
