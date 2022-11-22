@@ -204,10 +204,9 @@ namespace QueueTests
         [Test]
         public void IEnumerableGetEnumerator()
         {
-            Queue<int> queue = new();
-            IEnumerable test = queue;
+            IEnumerable queue = new Queue<int>(6, 4, 1, 2);
 
-            foreach (int i in test) { }
+            foreach (int i in queue) { }
         }
 
         [Test]

@@ -10,7 +10,7 @@ namespace Queue
 
         public QueueNode(T value)
         {
-            this.Value = value;
+            Value = value;
         }
         public override String ToString()
         {

@@ -5,7 +5,7 @@ using System.Threading;
 
 namespace Queue
 {
-    public class Queue<T> : IEnumerable<T>, ICollection
+    public class Queue<T> : ICollection, IEnumerable<T>
     {
         #region Fields
         private QueueNode<T> head;
