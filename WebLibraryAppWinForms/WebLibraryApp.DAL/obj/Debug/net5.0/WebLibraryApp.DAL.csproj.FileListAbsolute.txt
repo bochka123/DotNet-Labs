@@ -1,0 +1,15 @@
+F:\KPI\5 семестр\.net\WebLibraryAppWinForms\WebLibraryApp.DAL\bin\Debug\net5.0\WebLibraryApp.DAL.deps.json
+F:\KPI\5 семестр\.net\WebLibraryAppWinForms\WebLibraryApp.DAL\bin\Debug\net5.0\WebLibraryApp.DAL.runtimeconfig.json
+F:\KPI\5 семестр\.net\WebLibraryAppWinForms\WebLibraryApp.DAL\bin\Debug\net5.0\WebLibraryApp.DAL.runtimeconfig.dev.json
+F:\KPI\5 семестр\.net\WebLibraryAppWinForms\WebLibraryApp.DAL\bin\Debug\net5.0\WebLibraryApp.DAL.dll
+F:\KPI\5 семестр\.net\WebLibraryAppWinForms\WebLibraryApp.DAL\bin\Debug\net5.0\WebLibraryApp.DAL.pdb
+F:\KPI\5 семестр\.net\WebLibraryAppWinForms\WebLibraryApp.DAL\obj\Debug\net5.0\WebLibraryApp.DAL.csproj.AssemblyReference.cache
+F:\KPI\5 семестр\.net\WebLibraryAppWinForms\WebLibraryApp.DAL\obj\Debug\net5.0\WebLibraryApp.DAL.GeneratedMSBuildEditorConfig.editorconfig
+F:\KPI\5 семестр\.net\WebLibraryAppWinForms\WebLibraryApp.DAL\obj\Debug\net5.0\WebLibraryApp.DAL.AssemblyInfoInputs.cache
+F:\KPI\5 семестр\.net\WebLibraryAppWinForms\WebLibraryApp.DAL\obj\Debug\net5.0\WebLibraryApp.DAL.AssemblyInfo.cs
+F:\KPI\5 семестр\.net\WebLibraryAppWinForms\WebLibraryApp.DAL\obj\Debug\net5.0\WebLibraryApp.DAL.csproj.CoreCompileInputs.cache
+F:\KPI\5 семестр\.net\WebLibraryAppWinForms\WebLibraryApp.DAL\obj\Debug\net5.0\WebLibraryApp.DAL.dll
+F:\KPI\5 семестр\.net\WebLibraryAppWinForms\WebLibraryApp.DAL\obj\Debug\net5.0\refint\WebLibraryApp.DAL.dll
+F:\KPI\5 семестр\.net\WebLibraryAppWinForms\WebLibraryApp.DAL\obj\Debug\net5.0\WebLibraryApp.DAL.pdb
+F:\KPI\5 семестр\.net\WebLibraryAppWinForms\WebLibraryApp.DAL\obj\Debug\net5.0\WebLibraryApp.DAL.genruntimeconfig.cache
+F:\KPI\5 семестр\.net\WebLibraryAppWinForms\WebLibraryApp.DAL\obj\Debug\net5.0\ref\WebLibraryApp.DAL.dll
