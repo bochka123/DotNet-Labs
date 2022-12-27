@@ -46,6 +46,11 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Models\AuthorViewModel.cs" />
+    <Compile Include="Models\BookTopicViewModel.cs" />
+    <Compile Include="Models\BookViewModel.cs" />
+    <Compile Include="Models\UserCardViewModel.cs" />
+    <Compile Include="Models\UserViewModel.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Views\MainWindow.cs">
@@ -81,7 +86,12 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="Controlers\" />
-    <Folder Include="Models\" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\WebLibraryApp.BLL\WebLibraryApp.BLL.csproj">
+      <Project>{216196e6-2446-4111-bf84-17cb6f4d2143}</Project>
+      <Name>WebLibraryApp.BLL</Name>
+    </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
