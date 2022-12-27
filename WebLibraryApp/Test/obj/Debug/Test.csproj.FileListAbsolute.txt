@@ -1,0 +1,3 @@
+F:\KPI\5 семестр\.net\WebLibraryApp\Test\obj\Debug\Test.csproj.AssemblyReference.cache
+F:\KPI\5 семестр\.net\WebLibraryApp\Test\obj\Debug\Test.csproj.SuggestedBindingRedirects.cache
+F:\KPI\5 семестр\.net\WebLibraryApp\Test\obj\Debug\Test.csproj.CoreCompileInputs.cache

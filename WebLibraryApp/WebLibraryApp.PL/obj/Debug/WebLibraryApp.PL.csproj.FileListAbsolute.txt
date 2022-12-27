@@ -1,0 +1,11 @@
+F:\KPI\5 семестр\.net\WebLibraryApp\WebLibraryApp.PL\bin\Debug\WebLibraryApp.PL.exe.config
+F:\KPI\5 семестр\.net\WebLibraryApp\WebLibraryApp.PL\bin\Debug\WebLibraryApp.PL.exe
+F:\KPI\5 семестр\.net\WebLibraryApp\WebLibraryApp.PL\bin\Debug\WebLibraryApp.PL.pdb
+F:\KPI\5 семестр\.net\WebLibraryApp\WebLibraryApp.PL\obj\Debug\WebLibraryApp.PL.csproj.AssemblyReference.cache
+F:\KPI\5 семестр\.net\WebLibraryApp\WebLibraryApp.PL\obj\Debug\WebLibraryApp.PL.csproj.SuggestedBindingRedirects.cache
+F:\KPI\5 семестр\.net\WebLibraryApp\WebLibraryApp.PL\obj\Debug\WebLibraryApp.PL.Properties.Resources.resources
+F:\KPI\5 семестр\.net\WebLibraryApp\WebLibraryApp.PL\obj\Debug\WebLibraryApp.PL.csproj.GenerateResource.cache
+F:\KPI\5 семестр\.net\WebLibraryApp\WebLibraryApp.PL\obj\Debug\WebLibraryApp.PL.csproj.CoreCompileInputs.cache
+F:\KPI\5 семестр\.net\WebLibraryApp\WebLibraryApp.PL\obj\Debug\WebLibraryApp.PL.exe
+F:\KPI\5 семестр\.net\WebLibraryApp\WebLibraryApp.PL\obj\Debug\WebLibraryApp.PL.pdb
+F:\KPI\5 семестр\.net\WebLibraryApp\WebLibraryApp.PL\obj\Debug\WebLibraryApp.PL.Views.MainWindow.resources
