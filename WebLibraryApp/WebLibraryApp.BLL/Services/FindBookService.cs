@@ -61,7 +61,7 @@ namespace WebLibraryApp.BLL.Services
         public IEnumerable<BookDTO> FindByName(string name)
         {
             var mapper = new MapperConfiguration(config => config.CreateMap<Book, BookDTO>()).CreateMapper();
-            return mapper.Map<IEnumerable<Book>, List<BookDTO>>(UnitOfWork.Book.Find(e => e.Name == name));
+            return mapper.Map<IEnumerable<Book>, List<BookDTO>>(UnitOfWork.Book.Find(e => e.Name.Equals(name)));
         }
     }
 }

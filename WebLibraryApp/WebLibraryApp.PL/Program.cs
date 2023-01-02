@@ -4,11 +4,16 @@ using System.Linq;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using WebLibraryApp.PL.Views;
+using WebLibraryApp.BLL.Services;
+using Microsoft.Extensions.DependencyInjection;
+using WebLibraryApp.BLL.Infrastructure;
+using Ninject;
 
 namespace WebLibraryApp.PL
 {
-    internal static class Program
+    public static class Program
     {
+        public static IKernel Kernel { get; set; }
         /// <summary>
         /// The main entry point for the application.
         /// </summary>
@@ -17,7 +22,11 @@ namespace WebLibraryApp.PL
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new MainWindow());
+
+            Kernel = new StandardKernel();
+            Kernel.Load(new NinjectClass());
+            Application.Run(new AuthorizationWindow());
+
         }
     }
 }
