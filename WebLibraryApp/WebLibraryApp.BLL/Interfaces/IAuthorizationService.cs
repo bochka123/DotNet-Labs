@@ -11,6 +11,8 @@ namespace WebLibraryApp.BLL.Interfaces
     {
         UserDTO FindUser(int id);
         UserCardDTO FindUserCard(int id);
+        UserDTO FindUserByLogin(string login);
+        UserCardDTO FindUserCardByLogin(string login);
         IEnumerable<UserDTO> GetAllUsers();
         IEnumerable<UserCardDTO> GetAllUserCards();
         UserDTO Login(string login, string password);

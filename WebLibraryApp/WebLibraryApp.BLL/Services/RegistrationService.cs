@@ -46,7 +46,8 @@ namespace WebLibraryApp.BLL.Services
             };
             var NewUserCard = new UserCard
             {
-                DateOfMaking = new DateTime(),
+                DateOfMaking = DateTime.Now,
+                Books = new List<Book>(),
                 User = NewUser
             };
             UnitOfWork.UserCard.Create(NewUserCard);

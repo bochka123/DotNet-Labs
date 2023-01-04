@@ -10,6 +10,7 @@ namespace WebLibraryApp.PL.Models
     {
         public int Id { get; set; }
         public DateTime DateOfMaking { get; set; }
+        public virtual IEnumerable<BookViewModel> Books { get; set; }
         public int UserId { get; set; }
     }
 }

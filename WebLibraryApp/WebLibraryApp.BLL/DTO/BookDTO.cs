@@ -11,7 +11,8 @@ namespace WebLibraryApp.BLL.DTO
         public int Id { get; set; }
         public string Name { get; set; }
         public int NumberOfAvailable { get; set; }
-        public virtual ICollection<AuthorDTO> Authors { get; set; }
-        public virtual ICollection<BookTopicDTO> BookTopics { get; set; }
+        public virtual IEnumerable<AuthorDTO> Authors { get; set; }
+        public virtual IEnumerable<BookTopicDTO> BookTopics { get; set; }
+        public virtual IEnumerable<UserCardDTO> UserCards { get; set; }
     }
 }

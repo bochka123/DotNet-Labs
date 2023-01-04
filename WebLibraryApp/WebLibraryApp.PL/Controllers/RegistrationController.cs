@@ -39,6 +39,17 @@ namespace WebLibraryApp.PL.Controllers
             }
             return $"User { user.Login } registered succesfully ";
         }
-
+        public string DeleteUser(int id)
+        {
+            try
+            {
+                service.DeleteUser(id);
+            }
+            catch(ValidationException ex)
+            {
+                return ex.Message;
+            }
+            return "User was deleted";
+        }
     }
 }

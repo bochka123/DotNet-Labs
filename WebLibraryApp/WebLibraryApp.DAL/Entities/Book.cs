@@ -13,5 +13,6 @@ namespace WebLibraryApp.DAL.Entities
         public int NumberOfAvailable { get; set; }
         public virtual ICollection<Author> Authors { get; set; }
         public virtual ICollection<BookTopic> BookTopics { get; set; }
+        public virtual ICollection<UserCard> UserCards { get; set; }
     }
 }

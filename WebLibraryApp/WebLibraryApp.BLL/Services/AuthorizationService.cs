@@ -41,21 +41,41 @@ namespace WebLibraryApp.BLL.Services
         }
         public UserCardDTO FindUserCard(int id)
         {
-            var mapper = new MapperConfiguration(config => config.CreateMap<UserCard, UserCardDTO>()).CreateMapper();
+            var mapper = new MapperConfiguration(config => config.CreateMap<UserCard, UserCardDTO>()
+            .ForPath(a => a.User, opt => opt.MapFrom(aDTO => aDTO.User))
+            .ForPath(a => a.Books, opt => opt.MapFrom(aDTO => aDTO.Books)))
+                .CreateMapper();
             if (id < 0) 
                 throw new ValidationException("Id cannot be less than zero", "");
             var userCard = UnitOfWork.UserCard.Get(id);
             if (userCard == null) 
                 throw new ValidationException("UserCard not found", "");
+            //var userCardDTO = mapper.Map<UserCardDTO>(userCard);
+            //return userCardDTO;
             return new UserCardDTO
             {
                 Id = userCard.Id,
                 DateOfMaking = userCard.DateOfMaking,
-                Books = (ICollection<BookDTO>) userCard.Books,
-                User = mapper.Map<User, UserDTO>(UnitOfWork.User.Get(userCard.Id))
+                //Books = (ICollection<BookDTO>)userCard.Books,
+                //User = mapper.Map<User, UserDTO>(UnitOfWork.User.Get(userCard.Id))
             };
         }
-
+        public UserDTO FindUserByLogin(string login)
+        {
+            var user = UnitOfWork.User.Find(u => u.Login.Equals(login)).FirstOrDefault();
+            if (user == null)
+                throw new ValidationException("No user found!", "");
+            var mapper = new Mapper(new MapperConfiguration(config => config.CreateMap<User, UserDTO>()));
+            return mapper.Map<UserDTO>(user);
+        }
+        public UserCardDTO FindUserCardByLogin(string login)
+        {
+            var user = UnitOfWork.User.Find(u => u.Login.Equals(login)).FirstOrDefault();
+            if (user == null)
+                throw new ValidationException("No user card found!", "");
+            int id = user.Id;
+            return FindUserCard(id);
+        }
         public IEnumerable<UserDTO> GetAllUsers()
         {
             var mapper = new MapperConfiguration(config => config.CreateMap<User, UserDTO>()).CreateMapper();

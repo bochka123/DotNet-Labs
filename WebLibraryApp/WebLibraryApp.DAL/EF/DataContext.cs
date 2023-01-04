@@ -70,6 +70,15 @@ namespace WebLibraryApp.DAL.EF
                     ba.MapRightKey("BookRefId");
                     ba.ToTable("BookBookTopic");
                 });
+            modelBuilder.Entity<UserCard>()
+                .HasMany<Book>(a => a.Books)
+                .WithMany(b => b.UserCards)
+                .Map(ba =>
+                {
+                    ba.MapLeftKey("UserCardRefId");
+                    ba.MapRightKey("BookRefId");
+                    ba.ToTable("BookUserCard");
+                });
             modelBuilder.Entity<User>()
                 .HasOptional(uc => uc.Card)
                 .WithRequired(u => u.User);

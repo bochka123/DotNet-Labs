@@ -18,3 +18,6 @@ F:\KPI\5 семестр\.net\WebLibraryApp\WebLibraryApp.DAL\obj\Debug\WebLibrar
 F:\KPI\5 семестр\.net\WebLibraryApp\WebLibraryApp.DAL\obj\Debug\WebLibraryApp.DAL.Migrations.HopeFinalyy.resources
 F:\KPI\5 семестр\.net\WebLibraryApp\WebLibraryApp.DAL\obj\Debug\WebLibraryApp.DAL.Migrations.AddingFluentApi.resources
 F:\KPI\5 семестр\.net\WebLibraryApp\WebLibraryApp.DAL\obj\Debug\WebLibraryApp.DAL.Migrations.deletingunnecessary.resources
+F:\KPI\5 семестр\.net\WebLibraryApp\WebLibraryApp.DAL\obj\Debug\WebLibraryApp.DAL.Migrations.userCardManyToMany.resources
+F:\KPI\5 семестр\.net\WebLibraryApp\WebLibraryApp.DAL\obj\Debug\WebLibraryApp.DAL.Migrations.addingSeed.resources
+F:\KPI\5 семестр\.net\WebLibraryApp\WebLibraryApp.DAL\obj\Debug\WebLibraryApp.DAL.Migrations.addingSeed1.resources

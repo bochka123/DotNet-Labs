@@ -92,6 +92,18 @@
     <Compile Include="Migrations\202212261428252_deleting unnecessary.designer.cs">
       <DependentUpon>202212261428252_deleting unnecessary.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\202301022137262_userCardManyToMany.cs" />
+    <Compile Include="Migrations\202301022137262_userCardManyToMany.designer.cs">
+      <DependentUpon>202301022137262_userCardManyToMany.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202301022212116_addingSeed.cs" />
+    <Compile Include="Migrations\202301022212116_addingSeed.designer.cs">
+      <DependentUpon>202301022212116_addingSeed.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202301022217114_addingSeed1.cs" />
+    <Compile Include="Migrations\202301022217114_addingSeed1.designer.cs">
+      <DependentUpon>202301022217114_addingSeed1.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Properties\Settings.Designer.cs">
@@ -127,6 +139,15 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\202212261428252_deleting unnecessary.resx">
       <DependentUpon>202212261428252_deleting unnecessary.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202301022137262_userCardManyToMany.resx">
+      <DependentUpon>202301022137262_userCardManyToMany.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202301022212116_addingSeed.resx">
+      <DependentUpon>202301022212116_addingSeed.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202301022217114_addingSeed1.resx">
+      <DependentUpon>202301022217114_addingSeed1.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <ItemGroup>

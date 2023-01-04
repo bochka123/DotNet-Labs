@@ -1,4 +1,4 @@
-﻿using AutoMapper;
+﻿        using AutoMapper;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -22,8 +22,18 @@ namespace WebLibraryApp.BLL.Services
         }
         public IEnumerable<BookDTO> FindAll()
         {
-            var mapper = new MapperConfiguration(config => config.CreateMap<Book, BookDTO>()).CreateMapper();
-            return mapper.Map<IEnumerable<Book>, List<BookDTO>>(UnitOfWork.Book.GetAll());
+            var books = UnitOfWork.Book.GetAll();
+            return books.Select(book => new BookDTO
+            {
+                Id = book.Id,
+                Name = book.Name,
+                NumberOfAvailable = book.NumberOfAvailable,
+                Authors = book.Authors.Select(a => new AuthorDTO 
+                { 
+                    Id = a.Id,
+                    Name = a.Name
+                })
+            });
         }
 
         public BookDTO FindBook(int id)
@@ -60,8 +70,25 @@ namespace WebLibraryApp.BLL.Services
 
         public IEnumerable<BookDTO> FindByName(string name)
         {
-            var mapper = new MapperConfiguration(config => config.CreateMap<Book, BookDTO>()).CreateMapper();
-            return mapper.Map<IEnumerable<Book>, List<BookDTO>>(UnitOfWork.Book.Find(e => e.Name.Equals(name)));
+            //var mapper = new MapperConfiguration(config => config.CreateMap<Book, BookDTO>()).CreateMapper();
+            //return mapper.Map<IEnumerable<Book>, List<BookDTO>>(UnitOfWork.Book.Find(e => e.Name.Equals(name)));
+            var books = UnitOfWork.Book.Find(e => e.Name.Contains(name));
+            return books.Select(book => new BookDTO
+            {
+                Id = book.Id,
+                Name = book.Name,
+                NumberOfAvailable = book.NumberOfAvailable,
+                Authors = book.Authors.Select(a => new AuthorDTO
+                {
+                    Id = a.Id,
+                    Name = a.Name
+                }),
+                BookTopics = book.BookTopics.Select(a => new BookTopicDTO
+                {
+                    Id = a.Id,
+                    Topic = a.Topic
+                })
+            });
         }
     }
 }

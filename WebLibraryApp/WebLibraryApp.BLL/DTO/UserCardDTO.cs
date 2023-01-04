@@ -10,7 +10,7 @@ namespace WebLibraryApp.BLL.DTO
     {
         public int Id { get; set; }
         public DateTime DateOfMaking { get; set; }
-        public virtual ICollection<BookDTO> Books { get; set; }
+        public virtual IEnumerable<BookDTO> Books { get; set; }
         public UserDTO User { get; set; }
     }
 }

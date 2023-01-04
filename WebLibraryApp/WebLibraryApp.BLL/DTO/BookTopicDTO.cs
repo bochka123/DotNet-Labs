@@ -10,6 +10,6 @@ namespace WebLibraryApp.BLL.DTO
     {
         public int Id { get; set; }
         public string Topic { get; set; }
-        public virtual ICollection<BookDTO> Books { get; set; }
+        public virtual IEnumerable<BookDTO> Books { get; set; }
     }
 }

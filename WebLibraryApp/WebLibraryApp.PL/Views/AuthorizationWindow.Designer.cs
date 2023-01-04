@@ -74,7 +74,6 @@
             this.RegisterLabel.Size = new System.Drawing.Size(350, 89);
             this.RegisterLabel.TabIndex = 2;
             this.RegisterLabel.Text = "Register";
-            this.RegisterLabel.Click += new System.EventHandler(this.RegisterLabel_Click);
             // 
             // LoginLogin
             // 
@@ -203,6 +202,7 @@
             this.LoginButton.TabIndex = 15;
             this.LoginButton.Text = "Sign in";
             this.LoginButton.UseVisualStyleBackColor = false;
+            this.LoginButton.Click += new System.EventHandler(this.LoginButton_Click);
             // 
             // RegisterButton
             // 
@@ -245,6 +245,7 @@
             this.MaximumSize = new System.Drawing.Size(1024, 768);
             this.MinimumSize = new System.Drawing.Size(1024, 768);
             this.Name = "AuthorizationWindow";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "MainWindow";
             this.ResumeLayout(false);
             this.PerformLayout();

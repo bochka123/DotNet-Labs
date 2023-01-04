@@ -16,12 +16,16 @@ namespace WebLibraryApp.PL.Views
 {
     public partial class AuthorizationWindow : Form
     {
+        public MainWindow mainWindow;
         private RegistrationController registrationController;
+        private AuthorizationController authorizationController;
         public AuthorizationWindow()    
         {
             IKernel kernel = Program.Kernel;
             var registrationService = kernel.Get<IRegistrationService>();
+            var authorizationService = kernel.Get<IAuthorizationService>();
             registrationController = new RegistrationController(registrationService);
+            authorizationController = new AuthorizationController(authorizationService);
             InitializeComponent();
         }
 
@@ -44,9 +48,19 @@ namespace WebLibraryApp.PL.Views
             MessageBox.Show(result, "Registration result");
         }
 
-        private void RegisterLabel_Click(object sender, EventArgs e)
+        private void LoginButton_Click(object sender, EventArgs e)
         {
-
+            string login = LoginLogin.Text;
+            string password = LoginPassword.Text;
+            string result = authorizationController.Login(login, password);
+            if (result.StartsWith("U"))
+            {
+                this.Hide();
+                mainWindow = new MainWindow(login);
+                mainWindow.Show();
+            }else{
+                MessageBox.Show(result, "Login result");
+            }
         }
     }
 }

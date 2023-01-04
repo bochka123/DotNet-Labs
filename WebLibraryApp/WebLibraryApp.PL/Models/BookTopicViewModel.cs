@@ -10,5 +10,6 @@ namespace WebLibraryApp.PL.Models
     {
         public int Id { get; set; }
         public string Topic { get; set; }
+        public IEnumerable<BookViewModel> Books { get; set; }
     }
 }

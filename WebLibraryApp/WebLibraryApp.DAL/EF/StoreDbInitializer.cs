@@ -8,132 +8,297 @@
 
 //namespace WebLibraryApp.DAL.EF
 //{
-//    public class StoreDbInitializer : DropCreateDatabaseIfModelChanges<DataContext>
+//    public class StoreDbInitializer : DropCreateDatabaseAlways<DataContext>
 //    {
 //        protected override void Seed(DataContext context)
 //        {
 //            context.BookTopics.Add(new BookTopic
 //            {
 //                Id = 1,
-//                Topic = "Adventures"
+//                Topic = "Adventures",
+//                Books = new List<Book>()
+//                {
+//                    new Book
+//                    {
+//                        Id = 7
+//                    },
+//                    new Book
+//                    {
+//                        Id = 8
+//                    }
+//                }
 //            });
 //            context.BookTopics.Add(new BookTopic
 //            {
 //                Id = 2,
-//                Topic = "Fairytale"
+//                Topic = "Fairytale",
+//                Books = new List<Book>()
+//                {
+//                    new Book
+//                    {
+//                        Id = 3
+//                    },
+//                    new Book
+//                    {
+//                        Id = 4
+//                    },
+//                    new Book
+//                    {
+//                        Id = 5
+//                    }
+//                }
 //            });
 //            context.BookTopics.Add(new BookTopic
 //            {
 //                Id = 3,
-//                Topic = "Psychology"
+//                Topic = "Psychology",
+//                Books = new List<Book>()
+//                {
+//                    new Book
+//                    {
+//                        Id = 1
+//                    },
+//                    new Book
+//                    {
+//                        Id = 2
+//                    },
+//                    new Book
+//                    {
+//                        Id = 6
+//                    }
+//                }
 //            });
 //            context.Authors.Add(new Author
 //            {
 //                Id = 1,
-//                Name = "Valerian Pidmohylyny"
+//                Name = "Valerian Pidmohylyny",
+//                Books = new List<Book>()
+//                {
+//                    new Book
+//                    {
+//                        Id = 1
+//                    },
+//                    new Book
+//                    {
+//                        Id = 2
+//                    }
+//                }
 //            });
 //            context.Authors.Add(new Author
 //            {
 //                Id = 2,
 //                Name = "Oksana Zabuzhko",
+//                Books = new List<Book>()
+//                {
+//                    new Book
+//                    {
+//                        Id = 3
+//                    },
+//                    new Book
+//                    {
+//                        Id = 4
+//                    }
+//                }
 //            });
 //            context.Authors.Add(new Author
 //            {
 //                Id = 3,
 //                Name = "Donna Tartt",
+//                Books = new List<Book>()
+//                {
+//                    new Book
+//                    {
+//                        Id = 5
+//                    },
+//                    new Book
+//                    {
+//                        Id = 6
+//                    }
+//                }
 //            });
 //            context.Authors.Add(new Author
 //            {
 //                Id = 4,
 //                Name = "Mark Twain",
-//            });
-//            context.Users.Add(new User
-//            {
-//                Id = 1,
-//                FirstName = "Oleksandr",
-//                SecondName = "Tkach",
-//                Login = "bochka123",
-//                Password = "0000"
-//            });
-//            context.Users.Add(new User
-//            {
-//                Id = 2,
-//                FirstName = "Nazariy",
-//                SecondName = "Von Gerste",
-//                Login = "fuckinburner",
-//                Password = "1111"
+//                Books = new List<Book>()
+//                {
+//                    new Book
+//                    {
+//                        Id = 7
+//                    },
+//                    new Book
+//                    {
+//                        Id = 8
+//                    }
+//                }
 //            });
 //            context.Books.Add(new Book
 //            {
 //                Id = 1,
 //                Name = "A little drama",
-//                NumberOfExamples = 3,
-//                AuthorId = 1,
-//                BookTopicId = 3,
-//                Topic = context.BookTopics.Find(3)
+//                NumberOfAvailable = 3,
+//                Authors = new List<Author>()
+//                {
+//                    new Author
+//                    {
+//                        Id= 1,
+//                    }
+//                },
+//                BookTopics = new List<BookTopic>()
+//                {
+//                    new BookTopic
+//                    {
+//                        Id = 3
+//                    }
+//                },
+//                UserCards = new List<UserCard>()
 //            });
 //            context.Books.Add(new Book
 //            {
 //                Id = 2,
 //                Name = "City",
-//                NumberOfExamples = 2,
-//                AuthorId = 1,
-//                BookTopicId = 3,
-//                Topic = context.BookTopics.Find(3)
+//                NumberOfAvailable = 2,
+//                Authors = new List<Author>()
+//                {
+//                    new Author
+//                    {
+//                        Id= 1,
+//                    }
+//                },
+//                BookTopics = new List<BookTopic>()
+//                {
+//                    new BookTopic
+//                    {
+//                        Id = 3
+//                    }
+//                },
+//                UserCards = new List<UserCard>()
 //            });
 //            context.Books.Add(new Book
 //            {
 //                Id = 3,
 //                Name = "Museum of Abandoned Secrets",
-//                NumberOfExamples = 2,
-//                AuthorId = 2,
-//                BookTopicId = 2,
-//                Topic = context.BookTopics.Find(2)
+//                NumberOfAvailable = 2,
+//                Authors = new List<Author>()
+//                {
+//                    new Author
+//                    {
+//                        Id= 2,
+//                    }
+//                },
+//                BookTopics = new List<BookTopic>()
+//                {
+//                    new BookTopic
+//                    {
+//                        Id = 2
+//                    }
+//                },
+//                UserCards = new List<UserCard>()
 //            });
 //            context.Books.Add(new Book
 //            {
 //                Id = 4,
 //                Name = "A tale about a viburnum pipe",
-//                NumberOfExamples = 3,
-//                AuthorId = 2,
-//                BookTopicId = 2,
-//                Topic = context.BookTopics.Find(2)
+//                NumberOfAvailable = 3,
+//                Authors = new List<Author>()
+//                {
+//                    new Author
+//                    {
+//                        Id= 2,
+//                    }
+//                },
+//                BookTopics = new List<BookTopic>()
+//                {
+//                    new BookTopic
+//                    {
+//                        Id = 2
+//                    }
+//                },
+//                UserCards = new List<UserCard>()
 //            });
 //            context.Books.Add(new Book
 //            {
 //                Id = 5,
 //                Name = "Goldfinch",
-//                NumberOfExamples = 2,
-//                AuthorId = 3,
-//                BookTopicId = 3,
-//                Topic = context.BookTopics.Find(3)
+//                NumberOfAvailable = 2,
+//                Authors = new List<Author>()
+//                {
+//                    new Author
+//                    {
+//                        Id= 3,
+//                    }
+//                },
+//                BookTopics = new List<BookTopic>()
+//                {
+//                    new BookTopic
+//                    {
+//                        Id = 2
+//                    }
+//                },
+//                UserCards = new List<UserCard>()
 //            });
 //            context.Books.Add(new Book
 //            {
 //                Id = 6,
 //                Name = "A secret story",
-//                NumberOfExamples = 3,
-//                AuthorId = 3,
-//                BookTopicId = 3,
-//                Topic = context.BookTopics.Find(3)
+//                NumberOfAvailable = 3,
+//                Authors = new List<Author>()
+//                {
+//                    new Author
+//                    {
+//                        Id= 3,
+//                    }
+//                },
+//                BookTopics = new List<BookTopic>()
+//                {
+//                    new BookTopic
+//                    {
+//                        Id = 3
+//                    }
+//                },
+//                UserCards = new List<UserCard>()
 //            });
 //            context.Books.Add(new Book
 //            {
 //                Id = 7,
 //                Name = "The Adventures of Tom Sawyer",
-//                NumberOfExamples = 2,
-//                AuthorId = 4,
-//                BookTopicId = 1,
-//                Topic = context.BookTopics.Find(1)
+//                NumberOfAvailable = 2,
+//                Authors = new List<Author>()
+//                {
+//                    new Author
+//                    {
+//                        Id= 4,
+//                    }
+//                },
+//                BookTopics = new List<BookTopic>()
+//                {
+//                    new BookTopic
+//                    {
+//                        Id = 1
+//                    }
+//                },
+//                UserCards = new List<UserCard>()
 //            });
 //            context.Books.Add(new Book
 //            {
 //                Id = 8,
 //                Name = "The prince and the pauper",
-//                NumberOfExamples = 3,
-//                AuthorId = 4,
-//                BookTopicId = 1,
-//                Topic = context.BookTopics.Find(1)
+//                NumberOfAvailable = 3,
+//                Authors = new List<Author>()
+//                {
+//                    new Author
+//                    {
+//                        Id= 4,
+//                    }
+//                },
+//                BookTopics = new List<BookTopic>()
+//                {
+//                    new BookTopic
+//                    {
+//                        Id = 1
+//                    }
+//                },
+//                UserCards = new List<UserCard>()
 //            });
 //            context.SaveChanges();
 //        }
