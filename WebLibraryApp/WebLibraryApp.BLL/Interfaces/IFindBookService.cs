@@ -12,7 +12,7 @@ namespace WebLibraryApp.BLL.Interfaces
         BookDTO FindBook(int id);
         IEnumerable<BookDTO> FindAll();
         IEnumerable<BookDTO> FindByName(string name);
-        IEnumerable<BookDTO> FindByAuthorId(int id);
-        IEnumerable<BookDTO> FindByBookTopicId(int id);
+        IEnumerable<BookDTO> FindByAuthorName(string name);
+        IEnumerable<BookDTO> FindByBookTopicName(string name);
     }
 }

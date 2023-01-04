@@ -14,9 +14,11 @@ namespace ConsoleApp1
         static void Main(string[] args)
         {
             IUnitOfWork unitOfWork = new EFUnitOfWork();
-            Book b = unitOfWork.Book.Get(8);
-
-
+            //Book b = unitOfWork.Book.Get(8);
+            //Author a = unitOfWork.Author.Get(1);
+            //b.Authors.Add(a);
+            //unitOfWork.Book.Update(b);
+            //unitOfWork.Save();
             Console.WriteLine(b.BookTopics.First().Topic);
         }
     }

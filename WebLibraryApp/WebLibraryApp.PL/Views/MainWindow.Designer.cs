@@ -157,6 +157,7 @@
             this.ButtonTake.TabIndex = 28;
             this.ButtonTake.Text = "Take";
             this.ButtonTake.UseVisualStyleBackColor = false;
+            this.ButtonTake.Click += new System.EventHandler(this.ButtonTake_Click);
             // 
             // ButtonGive
             // 
@@ -171,6 +172,7 @@
             this.ButtonGive.TabIndex = 29;
             this.ButtonGive.Text = "Give";
             this.ButtonGive.UseVisualStyleBackColor = false;
+            this.ButtonGive.Click += new System.EventHandler(this.ButtonGive_Click);
             // 
             // LabelNumberOfTaken
             // 

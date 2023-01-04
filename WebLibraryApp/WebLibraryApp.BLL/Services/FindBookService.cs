@@ -48,30 +48,77 @@ namespace WebLibraryApp.BLL.Services
                 Id = book.Id,
                 Name = book.Name,
                 NumberOfAvailable = book.NumberOfAvailable,
-                Authors = (ICollection<AuthorDTO>)book.Authors,
-                BookTopics = (ICollection<BookTopicDTO>)book.BookTopics,
+                Authors = (IEnumerable<AuthorDTO>)book.Authors,
+                BookTopics = (IEnumerable<BookTopicDTO>)book.BookTopics,
             };
         }
 
-        public IEnumerable<BookDTO> FindByAuthorId(int id)
+        public IEnumerable<BookDTO> FindByAuthorName(string name)
         {
-            throw new NotImplementedException();
-            //var mapper = new MapperConfiguration(config => config.CreateMap<Book, BookDTO>()).CreateMapper();
-            //return mapper.Map<IEnumerable<Book>, List<BookDTO>>(UnitOfWork.Book.Find(e => e.Authors == Author));
+            var books = UnitOfWork.Book.GetAll().ToList();
+            List<BookDTO> result = new List<BookDTO>();
+            foreach (var book in books)
+            {
+                foreach (var author in book.Authors)
+                {
+                    if (author.Name.Contains(name))
+                    {
+                        result.Add(new BookDTO
+                        {
+                            Id = book.Id,
+                            Name = book.Name,
+                            NumberOfAvailable = book.NumberOfAvailable,
+                            Authors = book.Authors.Select(a => new AuthorDTO
+                            {
+                                Id = a.Id,
+                                Name = a.Name
+                            }),
+                            BookTopics = book.BookTopics.Select(a => new BookTopicDTO
+                            {
+                                Id = a.Id,
+                                Topic = a.Topic
+                            })
+                        });
+                    }
+                }
+            }
+            return result;
         }
 
-        public IEnumerable<BookDTO> FindByBookTopicId(int id)
+        public IEnumerable<BookDTO> FindByBookTopicName(string name)
         {
-            throw new NotImplementedException();
-            //var mapper = new MapperConfiguration(config => config.CreateMap<Book, BookDTO>()).CreateMapper();
-            //Mapper.CreateMap<Book, BookDTO>()
-            //.ForMember(dto => dto.providers, opt => opt.MapFrom(x => x.GoodsAndProviders.Select(y => y.Providers).ToList()));
+            var books = UnitOfWork.Book.GetAll().ToList();
+            List<BookDTO> result = new List<BookDTO>();
+            foreach (var book in books)
+            {
+                foreach (var bookTopic in book.BookTopics)
+                {
+                    if (bookTopic.Topic.Contains(name))
+                    {
+                        result.Add(new BookDTO
+                        {
+                            Id = book.Id,
+                            Name = book.Name,
+                            NumberOfAvailable = book.NumberOfAvailable,
+                            Authors = book.Authors.Select(a => new AuthorDTO
+                            {
+                                Id = a.Id,
+                                Name = a.Name
+                            }),
+                            BookTopics = book.BookTopics.Select(a => new BookTopicDTO
+                            {
+                                Id = a.Id,
+                                Topic = a.Topic
+                            })
+                        });
+                    }
+                }
+            }
+            return result;
         }
 
         public IEnumerable<BookDTO> FindByName(string name)
-        {
-            //var mapper = new MapperConfiguration(config => config.CreateMap<Book, BookDTO>()).CreateMapper();
-            //return mapper.Map<IEnumerable<Book>, List<BookDTO>>(UnitOfWork.Book.Find(e => e.Name.Equals(name)));
+        { 
             var books = UnitOfWork.Book.Find(e => e.Name.Contains(name));
             return books.Select(book => new BookDTO
             {

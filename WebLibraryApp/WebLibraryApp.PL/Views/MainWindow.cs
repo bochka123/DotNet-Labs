@@ -19,14 +19,17 @@ namespace WebLibraryApp.PL.Views
         string login;
         private FindBookController findBookController;
         private AuthorizationController authorizationController;
+        private ManageBookController manageBookController;
         UserCardViewModel userCard;
         public MainWindow(string login)
         {
             IKernel kernel = Program.Kernel;
             var findBookService = kernel.Get<IFindBookService>();
             var authorizationService = kernel.Get<IAuthorizationService>();
+            var manageBookService = kernel.Get<IManageBookService>();
             findBookController = new FindBookController(findBookService);
             authorizationController = new AuthorizationController(authorizationService);
+            manageBookController = new ManageBookController(manageBookService);
             InitializeComponent();
             this.login = login;
             ProfileButton.Text = login;
@@ -53,17 +56,27 @@ namespace WebLibraryApp.PL.Views
                     break;
                 case 0:
                     resultListBox.Items.Clear();
-                    var books = findBookController.FindBookByName(SearchField.Text);
-                    foreach (var book in books)
+                    var booksByName = findBookController.FindBookByName(SearchField.Text);
+                    foreach (var book in booksByName)
                     {
                         resultListBox.Items.Add(book.Name);
                     }
                     break;
                 case 1:
-                    MessageBox.Show(listBox1.SelectedItem.ToString());
+                    resultListBox.Items.Clear();
+                    var booksByAuthor = findBookController.FindBookByAuthorName(SearchField.Text);
+                    foreach (var book in booksByAuthor)
+                    {
+                        resultListBox.Items.Add(book.Name);
+                    }
                     break;
                 case 2:
-                    MessageBox.Show(listBox1.SelectedItem.ToString());
+                    resultListBox.Items.Clear();
+                    var booksByTopic = findBookController.FindBookByTopicName(SearchField.Text);
+                    foreach (var book in booksByTopic)
+                    {
+                        resultListBox.Items.Add(book.Name);
+                    }
                     break;
             }
         }
@@ -92,6 +105,21 @@ namespace WebLibraryApp.PL.Views
             {
                 LabelNumberOfTaken.Text = "Number of taken: 0";
             }
+        }
+
+        private void ButtonTake_Click(object sender, EventArgs e)
+        {
+            BookViewModel book = findBookController.FindBookByName(resultListBox.SelectedItem.ToString()).First();
+            int bookId = book.Id;
+            int userCardId = authorizationController.FindUserCardByLogin(login).Id;
+            manageBookController.TakeBook(bookId, userCardId);
+            MessageBox.Show($"You have taken {resultListBox.SelectedItem}", "Operation successful");
+            LabelNumberOfAvailable.Text = $"Number of available: {book.NumberOfAvailable}";
+        }
+
+        private void ButtonGive_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }

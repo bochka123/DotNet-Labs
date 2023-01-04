@@ -34,11 +34,50 @@ namespace WebLibraryApp.PL.Controllers
                 })
             }).ToList();
         }
+
+        public IEnumerable<BookViewModel> FindBookByAuthorName(string name)
+        {
+            var books = service.FindByAuthorName(name);
+            return books.Select(book => new BookViewModel
+            {
+                Id = book.Id,
+                Name = book.Name,
+                NumberOfAvailable = book.NumberOfAvailable,
+                Authors = book.Authors.Select(a => new AuthorViewModel
+                {
+                    Id = a.Id,
+                    Name = a.Name
+                }),
+                BookTopics = book.BookTopics.Select(a => new BookTopicViewModel
+                {
+                    Id = a.Id,
+                    Topic = a.Topic
+                })
+            }).ToList();
+        }
+        public IEnumerable<BookViewModel> FindBookByTopicName(string name)
+        {
+            var books = service.FindByBookTopicName(name);
+            return books.Select(book => new BookViewModel
+            {
+                Id = book.Id,
+                Name = book.Name,
+                NumberOfAvailable = book.NumberOfAvailable,
+                Authors = book.Authors.Select(a => new AuthorViewModel
+                {
+                    Id = a.Id,
+                    Name = a.Name
+                }),
+                BookTopics = book.BookTopics.Select(a => new BookTopicViewModel
+                {
+                    Id = a.Id,
+                    Topic = a.Topic
+                })
+            }).ToList();
+        }
         public IEnumerable<BookViewModel> FindBookByName(string name)
         {
             var books = service.FindByName(name);
-            //var mapper = new MapperConfiguration(config => config.CreateMap<BookDTO, BookViewModel>()).CreateMapper();
-            //return mapper.Map<BookViewModel>(bookDTO);
             return books.Select(book => new BookViewModel
             {
                 Id = book.Id,
