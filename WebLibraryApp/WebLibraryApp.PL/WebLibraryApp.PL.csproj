@@ -120,17 +120,23 @@
     <Compile Include="Views\AuthorizationWindow.Designer.cs">
       <DependentUpon>AuthorizationWindow.cs</DependentUpon>
     </Compile>
+    <Compile Include="Views\BookManagementWindow.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Views\BookManagementWindow.Designer.cs">
+      <DependentUpon>BookManagementWindow.cs</DependentUpon>
+    </Compile>
     <Compile Include="Views\MainWindow.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="Views\MainWindow.Designer.cs">
       <DependentUpon>MainWindow.cs</DependentUpon>
     </Compile>
-    <Compile Include="Views\Profile.cs">
+    <Compile Include="Views\ProfileWindow.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Views\Profile.Designer.cs">
-      <DependentUpon>Profile.cs</DependentUpon>
+    <Compile Include="Views\ProfileWindow.Designer.cs">
+      <DependentUpon>ProfileWindow.cs</DependentUpon>
     </Compile>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
@@ -145,11 +151,14 @@
     <EmbeddedResource Include="Views\AuthorizationWindow.resx">
       <DependentUpon>AuthorizationWindow.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Views\BookManagementWindow.resx">
+      <DependentUpon>BookManagementWindow.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Views\MainWindow.resx">
       <DependentUpon>MainWindow.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Views\Profile.resx">
-      <DependentUpon>Profile.cs</DependentUpon>
+    <EmbeddedResource Include="Views\ProfileWindow.resx">
+      <DependentUpon>ProfileWindow.cs</DependentUpon>
     </EmbeddedResource>
     <None Include="DataSet1.xsc">
       <DependentUpon>DataSet1.xsd</DependentUpon>

@@ -1,6 +1,6 @@
 ﻿namespace WebLibraryApp.PL.Views
 {
-    partial class Profile
+    partial class ProfileWindow
     {
         /// <summary>
         /// Required designer variable.
@@ -35,6 +35,7 @@
             this.LabelLogin = new System.Windows.Forms.Label();
             this.LabelDate = new System.Windows.Forms.Label();
             this.DeleteUserButton = new System.Windows.Forms.Button();
+            this.LabelBooks = new System.Windows.Forms.Label();
             this.SuspendLayout();
             // 
             // LogOutButton
@@ -81,7 +82,7 @@
             // 
             this.LabelSecondName.AutoSize = true;
             this.LabelSecondName.Font = new System.Drawing.Font("Cascadia Code", 16.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.LabelSecondName.Location = new System.Drawing.Point(107, 273);
+            this.LabelSecondName.Location = new System.Drawing.Point(107, 228);
             this.LabelSecondName.Name = "LabelSecondName";
             this.LabelSecondName.Size = new System.Drawing.Size(209, 37);
             this.LabelSecondName.TabIndex = 20;
@@ -91,7 +92,7 @@
             // 
             this.LabelLogin.AutoSize = true;
             this.LabelLogin.Font = new System.Drawing.Font("Cascadia Code", 16.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.LabelLogin.Location = new System.Drawing.Point(107, 374);
+            this.LabelLogin.Location = new System.Drawing.Point(107, 281);
             this.LabelLogin.Name = "LabelLogin";
             this.LabelLogin.Size = new System.Drawing.Size(113, 37);
             this.LabelLogin.TabIndex = 21;
@@ -101,7 +102,7 @@
             // 
             this.LabelDate.AutoSize = true;
             this.LabelDate.Font = new System.Drawing.Font("Cascadia Code", 16.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.LabelDate.Location = new System.Drawing.Point(107, 478);
+            this.LabelDate.Location = new System.Drawing.Point(107, 342);
             this.LabelDate.Name = "LabelDate";
             this.LabelDate.Size = new System.Drawing.Size(465, 37);
             this.LabelDate.TabIndex = 22;
@@ -122,12 +123,23 @@
             this.DeleteUserButton.UseVisualStyleBackColor = false;
             this.DeleteUserButton.Click += new System.EventHandler(this.DeleteUserButton_Click);
             // 
+            // LabelBooks
+            // 
+            this.LabelBooks.AutoSize = true;
+            this.LabelBooks.Font = new System.Drawing.Font("Cascadia Code", 16.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.LabelBooks.Location = new System.Drawing.Point(107, 391);
+            this.LabelBooks.Name = "LabelBooks";
+            this.LabelBooks.Size = new System.Drawing.Size(257, 37);
+            this.LabelBooks.TabIndex = 24;
+            this.LabelBooks.Text = "Books you have:";
+            // 
             // Profile
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(134)))), ((int)(((byte)(240)))), ((int)(((byte)(255)))));
             this.ClientSize = new System.Drawing.Size(1006, 721);
+            this.Controls.Add(this.LabelBooks);
             this.Controls.Add(this.DeleteUserButton);
             this.Controls.Add(this.LabelDate);
             this.Controls.Add(this.LabelLogin);
@@ -154,5 +166,6 @@
         private System.Windows.Forms.Label LabelLogin;
         private System.Windows.Forms.Label LabelDate;
         private System.Windows.Forms.Button DeleteUserButton;
+        private System.Windows.Forms.Label LabelBooks;
     }
 }

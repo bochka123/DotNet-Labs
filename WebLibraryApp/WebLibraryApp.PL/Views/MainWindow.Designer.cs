@@ -34,12 +34,11 @@
             this.ProfileButton = new System.Windows.Forms.Button();
             this.resultListBox = new System.Windows.Forms.ListBox();
             this.LabelBookName = new System.Windows.Forms.Label();
-            this.LabelNumberOfAvailable = new System.Windows.Forms.Label();
             this.LabelBookAuthor = new System.Windows.Forms.Label();
             this.LabelBookTopics = new System.Windows.Forms.Label();
             this.ButtonTake = new System.Windows.Forms.Button();
             this.ButtonGive = new System.Windows.Forms.Button();
-            this.LabelNumberOfTaken = new System.Windows.Forms.Label();
+            this.AddBookWindow = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // SearchField
@@ -108,21 +107,11 @@
             // 
             this.LabelBookName.AutoSize = true;
             this.LabelBookName.Font = new System.Drawing.Font("Cascadia Code", 16.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.LabelBookName.Location = new System.Drawing.Point(414, 262);
+            this.LabelBookName.Location = new System.Drawing.Point(414, 322);
             this.LabelBookName.Name = "LabelBookName";
             this.LabelBookName.Size = new System.Drawing.Size(177, 37);
             this.LabelBookName.TabIndex = 24;
             this.LabelBookName.Text = "Book name:";
-            // 
-            // LabelNumberOfAvailable
-            // 
-            this.LabelNumberOfAvailable.AutoSize = true;
-            this.LabelNumberOfAvailable.Font = new System.Drawing.Font("Cascadia Code", 16.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.LabelNumberOfAvailable.Location = new System.Drawing.Point(414, 334);
-            this.LabelNumberOfAvailable.Name = "LabelNumberOfAvailable";
-            this.LabelNumberOfAvailable.Size = new System.Drawing.Size(337, 37);
-            this.LabelNumberOfAvailable.TabIndex = 25;
-            this.LabelNumberOfAvailable.Text = "Number of available:";
             // 
             // LabelBookAuthor
             // 
@@ -138,7 +127,7 @@
             // 
             this.LabelBookTopics.AutoSize = true;
             this.LabelBookTopics.Font = new System.Drawing.Font("Cascadia Code", 16.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.LabelBookTopics.Location = new System.Drawing.Point(414, 483);
+            this.LabelBookTopics.Location = new System.Drawing.Point(414, 487);
             this.LabelBookTopics.Name = "LabelBookTopics";
             this.LabelBookTopics.Size = new System.Drawing.Size(209, 37);
             this.LabelBookTopics.TabIndex = 27;
@@ -174,15 +163,20 @@
             this.ButtonGive.UseVisualStyleBackColor = false;
             this.ButtonGive.Click += new System.EventHandler(this.ButtonGive_Click);
             // 
-            // LabelNumberOfTaken
+            // AddBookWindow
             // 
-            this.LabelNumberOfTaken.AutoSize = true;
-            this.LabelNumberOfTaken.Font = new System.Drawing.Font("Cascadia Code", 16.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.LabelNumberOfTaken.Location = new System.Drawing.Point(414, 555);
-            this.LabelNumberOfTaken.Name = "LabelNumberOfTaken";
-            this.LabelNumberOfTaken.Size = new System.Drawing.Size(273, 37);
-            this.LabelNumberOfTaken.TabIndex = 30;
-            this.LabelNumberOfTaken.Text = "Number of taken:";
+            this.AddBookWindow.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(170)))), ((int)(((byte)(191)))));
+            this.AddBookWindow.FlatAppearance.BorderSize = 0;
+            this.AddBookWindow.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.AddBookWindow.Font = new System.Drawing.Font("Cascadia Code", 16.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.AddBookWindow.ForeColor = System.Drawing.Color.White;
+            this.AddBookWindow.Location = new System.Drawing.Point(12, 12);
+            this.AddBookWindow.Name = "AddBookWindow";
+            this.AddBookWindow.Size = new System.Drawing.Size(223, 65);
+            this.AddBookWindow.TabIndex = 30;
+            this.AddBookWindow.Text = "Add a book";
+            this.AddBookWindow.UseVisualStyleBackColor = false;
+            this.AddBookWindow.Click += new System.EventHandler(this.AddBookWindow_Click);
             // 
             // MainWindow
             // 
@@ -190,12 +184,11 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(134)))), ((int)(((byte)(240)))), ((int)(((byte)(255)))));
             this.ClientSize = new System.Drawing.Size(1006, 721);
-            this.Controls.Add(this.LabelNumberOfTaken);
+            this.Controls.Add(this.AddBookWindow);
             this.Controls.Add(this.ButtonGive);
             this.Controls.Add(this.ButtonTake);
             this.Controls.Add(this.LabelBookTopics);
             this.Controls.Add(this.LabelBookAuthor);
-            this.Controls.Add(this.LabelNumberOfAvailable);
             this.Controls.Add(this.LabelBookName);
             this.Controls.Add(this.resultListBox);
             this.Controls.Add(this.ProfileButton);
@@ -219,11 +212,10 @@
         private System.Windows.Forms.Button ProfileButton;
         private System.Windows.Forms.ListBox resultListBox;
         private System.Windows.Forms.Label LabelBookName;
-        private System.Windows.Forms.Label LabelNumberOfAvailable;
         private System.Windows.Forms.Label LabelBookAuthor;
         private System.Windows.Forms.Label LabelBookTopics;
         private System.Windows.Forms.Button ButtonTake;
         private System.Windows.Forms.Button ButtonGive;
-        private System.Windows.Forms.Label LabelNumberOfTaken;
+        private System.Windows.Forms.Button AddBookWindow;
     }
 }

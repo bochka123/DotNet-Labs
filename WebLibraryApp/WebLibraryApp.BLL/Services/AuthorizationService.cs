@@ -50,14 +50,15 @@ namespace WebLibraryApp.BLL.Services
             var userCard = UnitOfWork.UserCard.Get(id);
             if (userCard == null) 
                 throw new ValidationException("UserCard not found", "");
-            //var userCardDTO = mapper.Map<UserCardDTO>(userCard);
-            //return userCardDTO;
             return new UserCardDTO
             {
                 Id = userCard.Id,
                 DateOfMaking = userCard.DateOfMaking,
-                //Books = (ICollection<BookDTO>)userCard.Books,
-                //User = mapper.Map<User, UserDTO>(UnitOfWork.User.Get(userCard.Id))
+                Books = userCard.Books.Select(a => new BookDTO
+                {
+                    Id = a.Id,
+                    Name = a.Name,
+                })
             };
         }
         public UserDTO FindUserByLogin(string login)

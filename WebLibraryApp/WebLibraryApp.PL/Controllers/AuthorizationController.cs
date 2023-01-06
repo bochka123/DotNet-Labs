@@ -49,7 +49,12 @@ namespace WebLibraryApp.PL.Controllers
             return new UserCardViewModel
             {
                 Id = userCard.Id,
-                DateOfMaking = userCard.DateOfMaking
+                DateOfMaking = userCard.DateOfMaking,
+                Books = userCard.Books.Select(b => new BookViewModel
+                {
+                    Id = b.Id,
+                    Name = b.Name
+                })
             };
         }
     }

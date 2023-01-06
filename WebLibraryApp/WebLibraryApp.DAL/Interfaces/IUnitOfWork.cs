@@ -11,7 +11,6 @@ namespace WebLibraryApp.DAL.Interfaces
     {
         IRepository<Author> Author { get; }
         IRepository<Book> Book { get; }
-        IDictionaryRepository<BookTopic> BookTopic { get; }
         IRepository<User> User { get; }
         IRepository<UserCard> UserCard { get; }
         void Save();

@@ -11,5 +11,6 @@ namespace WebLibraryApp.BLL.Interfaces
     {
         void TakeBook(int bookId, int userCardId);
         void GiveBook(int bookId, int userCardId);
+        void AddBook(string name, string numberOfExamples, string authors, string topics);
     }
 }

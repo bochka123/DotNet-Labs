@@ -29,7 +29,6 @@ F:\KPI\5 семестр\.net\WebLibraryApp\WebLibraryApp.PL\bin\Debug\System.Run
 F:\KPI\5 семестр\.net\WebLibraryApp\WebLibraryApp.PL\obj\Debug\WebLibraryApp.PL.Views.AuthorizationWindow.resources
 F:\KPI\5 семестр\.net\WebLibraryApp\WebLibraryApp.PL\obj\Debug\WebLibraryApp.PL.csproj.CopyComplete
 F:\KPI\5 семестр\.net\WebLibraryApp\WebLibraryApp.PL\obj\Debug\WebLibraryApp.PL.Views.MainWindow.resources
-F:\KPI\5 семестр\.net\WebLibraryApp\WebLibraryApp.PL\obj\Debug\WebLibraryApp.PL.Views.Profile.resources
 F:\KPI\5 семестр\.net\WebLibraryApp\WebLibraryApp.PL\bin\Debug\Microsoft.Web.Infrastructure.dll
 F:\KPI\5 семестр\.net\WebLibraryApp\WebLibraryApp.PL\bin\Debug\System.Web.Helpers.dll
 F:\KPI\5 семестр\.net\WebLibraryApp\WebLibraryApp.PL\bin\Debug\System.Web.Mvc.dll
@@ -49,3 +48,5 @@ F:\KPI\5 семестр\.net\WebLibraryApp\WebLibraryApp.PL\bin\Debug\EntityFram
 F:\KPI\5 семестр\.net\WebLibraryApp\WebLibraryApp.PL\bin\Debug\EntityFramework.SqlServer.xml
 F:\KPI\5 семестр\.net\WebLibraryApp\WebLibraryApp.PL\bin\Debug\Ninject.dll
 F:\KPI\5 семестр\.net\WebLibraryApp\WebLibraryApp.PL\bin\Debug\Ninject.xml
+F:\KPI\5 семестр\.net\WebLibraryApp\WebLibraryApp.PL\obj\Debug\WebLibraryApp.PL.Views.ProfileWindow.resources
+F:\KPI\5 семестр\.net\WebLibraryApp\WebLibraryApp.PL\obj\Debug\WebLibraryApp.PL.Views.BookManagementWindow.resources

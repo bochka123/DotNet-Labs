@@ -11,12 +11,26 @@ using WebLibraryApp.DAL.Interfaces;
 
 namespace WebLibraryApp.DAL.Repoositories
 {
-    class BookTopicRepository : IDictionaryRepository<BookTopic>
+    class BookTopicRepository : IRepository<BookTopic>
     {
         private DataContext db;
         public BookTopicRepository(DataContext context)
         {
             db = context;
+        }
+
+        public void Create(BookTopic item)
+        {
+            db.BookTopics.Add(item);
+        }
+
+        public void Delete(int id)
+        {
+            BookTopic bookTopic = db.BookTopics.Find(id);
+            if (bookTopic != null)
+            {
+                db.BookTopics.Remove(bookTopic);
+            }
         }
 
         public IEnumerable<BookTopic> Find(Expression<Func<BookTopic, bool>> predicate)
@@ -32,6 +46,11 @@ namespace WebLibraryApp.DAL.Repoositories
         public IEnumerable<BookTopic> GetAll()
         {
             return db.BookTopics;
+        }
+
+        public void Update(BookTopic item)
+        {
+            db.Entry(item).State = EntityState.Modified;
         }
     }
 }

@@ -45,7 +45,7 @@ namespace WebLibraryApp.DAL.Repoositories
                 return bookRepository;
             }
         }
-        public IDictionaryRepository<BookTopic> BookTopic
+        public IRepository<BookTopic> BookTopic
         {
             get
             {

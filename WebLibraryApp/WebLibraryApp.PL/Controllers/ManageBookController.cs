@@ -18,9 +18,41 @@ namespace WebLibraryApp.PL.Controllers
         {
             this.service = service;
         }
-        public void TakeBook(int bookId, int userCardId)
+        public string TakeBook(int bookId, int userCardId)
         {
-            service.TakeBook(bookId, userCardId);
+            try
+            {
+                service.TakeBook(bookId, userCardId);
+                return "You took a book";
+            }
+            catch (ValidationException ex)
+            {
+                return ex.Message;
+            }
+        }
+        public string GiveBook(int bookId, int userCardId)
+        {
+            try
+            {
+                service.GiveBook(bookId, userCardId);
+                return "You gave a book";
+            }
+            catch(ValidationException ex)
+            {
+                return ex.Message;
+            }
+        }
+        public string AddBook(string name, string numberOfExamples, string authors, string topics)
+        {
+            try
+            {
+                service.AddBook(name, numberOfExamples, authors, topics);
+                return "You added a book";
+            }
+            catch (ValidationException ex)
+            {
+                return ex.Message;
+            }
         }
     }
 }

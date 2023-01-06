@@ -61,7 +61,6 @@
     <Compile Include="Entities\BookTopic.cs" />
     <Compile Include="Entities\User.cs" />
     <Compile Include="Entities\UserCard.cs" />
-    <Compile Include="Interfaces\IDictionaryRepository.cs" />
     <Compile Include="Interfaces\IRepository.cs" />
     <Compile Include="Interfaces\IUnitOfWork.cs" />
     <Compile Include="Migrations\202212230823508_InitialCreate.cs" />

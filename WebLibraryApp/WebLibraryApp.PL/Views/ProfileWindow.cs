@@ -14,14 +14,14 @@ using WebLibraryApp.BLL.Interfaces;
 
 namespace WebLibraryApp.PL.Views
 {
-    public partial class Profile : Form
+    public partial class ProfileWindow : Form
     {
         string login;
         UserViewModel user;
         UserCardViewModel userCard;
         private AuthorizationController authorizationController;
         private RegistrationController registrationController;
-        public Profile(string login)
+        public ProfileWindow(string login)
         {
             IKernel kernel = Program.Kernel;
             var authorizationService = kernel.Get<IAuthorizationService>();
@@ -36,6 +36,11 @@ namespace WebLibraryApp.PL.Views
             LabelSecondName.Text = $"Second name: {user.SecondName}";
             LabelLogin.Text = $"Login: {user.Login}";
             LabelDate.Text = $"Date of making a card: {userCard.DateOfMaking}";
+            LabelBooks.Text = "Books you have: ";
+            foreach (var book in userCard.Books.ToList())
+            {
+                LabelBooks.Text += $"{book.Name} \n                ";
+            }
         }
 
         private void MainWindowButton_Click(object sender, EventArgs e)

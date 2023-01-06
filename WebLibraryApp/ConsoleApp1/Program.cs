@@ -19,7 +19,13 @@ namespace ConsoleApp1
             //b.Authors.Add(a);
             //unitOfWork.Book.Update(b);
             //unitOfWork.Save();
-            Console.WriteLine(b.BookTopics.First().Topic);
+            UserCard card = unitOfWork.UserCard.Get(1);
+            List<Book> books = card.Books.ToList();
+            foreach (Book book in books)
+            {
+                Console.WriteLine(book.Name);
+            }
+            
         }
     }
 }

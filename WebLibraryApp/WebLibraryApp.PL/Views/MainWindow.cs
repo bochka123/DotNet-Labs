@@ -20,7 +20,6 @@ namespace WebLibraryApp.PL.Views
         private FindBookController findBookController;
         private AuthorizationController authorizationController;
         private ManageBookController manageBookController;
-        UserCardViewModel userCard;
         public MainWindow(string login)
         {
             IKernel kernel = Program.Kernel;
@@ -43,7 +42,7 @@ namespace WebLibraryApp.PL.Views
         private void ProfileButton_Click(object sender, EventArgs e)
         {
             this.Close();
-            Profile profile = new Profile(login);
+            ProfileWindow profile = new ProfileWindow(login);
             profile.Show();
         }
         
@@ -86,7 +85,6 @@ namespace WebLibraryApp.PL.Views
             string bookName = resultListBox.SelectedItem.ToString();
             List<BookViewModel> book = (List<BookViewModel>)findBookController.FindBookByName(bookName);
             LabelBookName.Text = $"Book name: {book.First().Name}";
-            LabelNumberOfAvailable.Text = $"Number of available: {book.First().NumberOfAvailable}";
             LabelBookAuthor.Text = "Authors: ";
             foreach (var item in book.First().Authors)
             {
@@ -97,29 +95,49 @@ namespace WebLibraryApp.PL.Views
             {
                 LabelBookTopics.Text += $"{item.Topic} ";
             }
-            userCard = authorizationController.FindUserCardByLogin(login);
-            try
-            {
-                LabelNumberOfTaken.Text = userCard.Books.ToList().Count.ToString();
-            }catch(ArgumentNullException)
-            {
-                LabelNumberOfTaken.Text = "Number of taken: 0";
-            }
         }
 
         private void ButtonTake_Click(object sender, EventArgs e)
         {
-            BookViewModel book = findBookController.FindBookByName(resultListBox.SelectedItem.ToString()).First();
+            string bookName;
+            if (resultListBox.SelectedIndex != -1) {
+                bookName = resultListBox.SelectedItem.ToString();
+            }
+            else {
+                MessageBox.Show("You didn`t select a book", "Something went wrong");
+                return;
+            }
+            BookViewModel book = findBookController.FindBookByName(bookName).First();
             int bookId = book.Id;
             int userCardId = authorizationController.FindUserCardByLogin(login).Id;
-            manageBookController.TakeBook(bookId, userCardId);
-            MessageBox.Show($"You have taken {resultListBox.SelectedItem}", "Operation successful");
-            LabelNumberOfAvailable.Text = $"Number of available: {book.NumberOfAvailable}";
+            string result = manageBookController.TakeBook(bookId, userCardId);
+            MessageBox.Show(result, result.Equals("You took a book") ? "Operation successful" : "Something went wrong");
         }
 
         private void ButtonGive_Click(object sender, EventArgs e)
         {
+            string bookName;
+            if (resultListBox.SelectedIndex != -1)
+            {
+                bookName = resultListBox.SelectedItem.ToString();
+            }
+            else
+            {
+                MessageBox.Show("You didn`t select a book", "Something went wrong");
+                return;
+            }
+            BookViewModel book = findBookController.FindBookByName(bookName).First();
+            int bookId = book.Id;
+            int userCardId = authorizationController.FindUserCardByLogin(login).Id;
+            string result = manageBookController.GiveBook(bookId, userCardId);
+            MessageBox.Show(result, result.Equals("You gave a book") ? "Operation successful" : "Something went wrong");
+        }
 
+        private void AddBookWindow_Click(object sender, EventArgs e)
+        {
+            this.Close();
+            BookManagementWindow window = new BookManagementWindow(login);
+            window.Show();
         }
     }
 }
