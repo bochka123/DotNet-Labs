@@ -1,0 +1,16 @@
+F:\KPI\5 семестр\.net\WebLibraryAppMVC\WebLibraryAppMVC.BLL\obj\Debug\WebLibraryAppMVC.BLL.csproj.AssemblyReference.cache
+F:\KPI\5 семестр\.net\WebLibraryAppMVC\WebLibraryAppMVC.BLL\obj\Debug\WebLibraryAppMVC.BLL.csproj.CoreCompileInputs.cache
+F:\KPI\5 семестр\.net\WebLibraryAppMVC\WebLibraryAppMVC.BLL\bin\Debug\WebLibraryAppMVC.BLL.dll
+F:\KPI\5 семестр\.net\WebLibraryAppMVC\WebLibraryAppMVC.BLL\bin\Debug\WebLibraryAppMVC.BLL.pdb
+F:\KPI\5 семестр\.net\WebLibraryAppMVC\WebLibraryAppMVC.BLL\bin\Debug\AutoMapper.dll
+F:\KPI\5 семестр\.net\WebLibraryAppMVC\WebLibraryAppMVC.BLL\bin\Debug\Ninject.dll
+F:\KPI\5 семестр\.net\WebLibraryAppMVC\WebLibraryAppMVC.BLL\bin\Debug\WebLibraryAppMVC.DAL.dll
+F:\KPI\5 семестр\.net\WebLibraryAppMVC\WebLibraryAppMVC.BLL\bin\Debug\EntityFramework.dll
+F:\KPI\5 семестр\.net\WebLibraryAppMVC\WebLibraryAppMVC.BLL\bin\Debug\WebLibraryAppMVC.DAL.pdb
+F:\KPI\5 семестр\.net\WebLibraryAppMVC\WebLibraryAppMVC.BLL\bin\Debug\WebLibraryAppMVC.DAL.dll.config
+F:\KPI\5 семестр\.net\WebLibraryAppMVC\WebLibraryAppMVC.BLL\bin\Debug\AutoMapper.xml
+F:\KPI\5 семестр\.net\WebLibraryAppMVC\WebLibraryAppMVC.BLL\bin\Debug\Ninject.xml
+F:\KPI\5 семестр\.net\WebLibraryAppMVC\WebLibraryAppMVC.BLL\bin\Debug\EntityFramework.xml
+F:\KPI\5 семестр\.net\WebLibraryAppMVC\WebLibraryAppMVC.BLL\obj\Debug\WebLibraryAppMVC.BLL.csproj.CopyComplete
+F:\KPI\5 семестр\.net\WebLibraryAppMVC\WebLibraryAppMVC.BLL\obj\Debug\WebLibraryAppMVC.BLL.dll
+F:\KPI\5 семестр\.net\WebLibraryAppMVC\WebLibraryAppMVC.BLL\obj\Debug\WebLibraryAppMVC.BLL.pdb

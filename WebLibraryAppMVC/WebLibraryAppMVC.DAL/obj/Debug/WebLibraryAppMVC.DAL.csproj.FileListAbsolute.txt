@@ -1,0 +1,12 @@
+F:\KPI\5 семестр\.net\WebLibraryAppMVC\WebLibraryAppMVC.DAL\obj\Debug\WebLibraryAppMVC.DAL.csproj.AssemblyReference.cache
+F:\KPI\5 семестр\.net\WebLibraryAppMVC\WebLibraryAppMVC.DAL\obj\Debug\WebLibraryAppMVC.DAL.csproj.CoreCompileInputs.cache
+F:\KPI\5 семестр\.net\WebLibraryAppMVC\WebLibraryAppMVC.DAL\bin\Debug\WebLibraryAppMVC.DAL.dll.config
+F:\KPI\5 семестр\.net\WebLibraryAppMVC\WebLibraryAppMVC.DAL\bin\Debug\WebLibraryAppMVC.DAL.dll
+F:\KPI\5 семестр\.net\WebLibraryAppMVC\WebLibraryAppMVC.DAL\bin\Debug\WebLibraryAppMVC.DAL.pdb
+F:\KPI\5 семестр\.net\WebLibraryAppMVC\WebLibraryAppMVC.DAL\bin\Debug\EntityFramework.dll
+F:\KPI\5 семестр\.net\WebLibraryAppMVC\WebLibraryAppMVC.DAL\bin\Debug\EntityFramework.SqlServer.dll
+F:\KPI\5 семестр\.net\WebLibraryAppMVC\WebLibraryAppMVC.DAL\bin\Debug\EntityFramework.xml
+F:\KPI\5 семестр\.net\WebLibraryAppMVC\WebLibraryAppMVC.DAL\bin\Debug\EntityFramework.SqlServer.xml
+F:\KPI\5 семестр\.net\WebLibraryAppMVC\WebLibraryAppMVC.DAL\obj\Debug\WebLibraryAppMVC.DAL.csproj.CopyComplete
+F:\KPI\5 семестр\.net\WebLibraryAppMVC\WebLibraryAppMVC.DAL\obj\Debug\WebLibraryAppMVC.DAL.dll
+F:\KPI\5 семестр\.net\WebLibraryAppMVC\WebLibraryAppMVC.DAL\obj\Debug\WebLibraryAppMVC.DAL.pdb
