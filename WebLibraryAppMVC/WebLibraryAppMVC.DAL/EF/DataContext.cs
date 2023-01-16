@@ -16,7 +16,7 @@ namespace WebLibraryAppMVC.DAL.EF
         public DbSet<BookTopic> BookTopics { get; set; }
         public DbSet<User> Users { get; set; }
         public DbSet<UserCard> UserCards { get; set; }
-        public DataContext() : base("Library")
+        public DataContext() : base("LibraryMVC")
         {
 
         }

@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-using WebLibraryAppMVC.DAL.Repoositories;
+using WebLibraryAppMVC.DAL.Repositories;
 using WebLibraryAppMVC.DAL.Interfaces;
 using WebLibraryAppMVC.DAL.Entities;
 
@@ -14,12 +14,11 @@ namespace ConsoleApp1
         static void Main(string[] args)
         {
             IUnitOfWork unitOfWork = new EFUnitOfWork();
-            UserCard card = unitOfWork.UserCard.Get(1);
-            List<Book> books = card.Books.ToList();
-            foreach (Book book in books)
-            {
-                Console.WriteLine(book.Name);
-            }
+            Book book = unitOfWork.Book.Get(8);
+            book.BookTopics.Add(unitOfWork.BookTopic.Get(1));
+            unitOfWork.Book.Update(book);
+            unitOfWork.Save();
+            
         }
     }
 }

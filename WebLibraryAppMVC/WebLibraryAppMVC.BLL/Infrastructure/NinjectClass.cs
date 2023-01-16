@@ -6,6 +6,8 @@ using System.Threading.Tasks;
 using Ninject.Modules;
 using WebLibraryAppMVC.BLL.Interfaces;
 using WebLibraryAppMVC.BLL.Services;
+using WebLibraryAppMVC.DAL.Interfaces;
+using WebLibraryAppMVC.DAL.Repositories;
 
 namespace WebLibraryAppMVC.BLL.Infrastructure
 {
@@ -13,10 +15,9 @@ namespace WebLibraryAppMVC.BLL.Infrastructure
     {
         public override void Load()
         {
-            Bind<IAuthorizationService>().To<AuthorizationService>();
+            Bind<IRegistrationAndAuthorizationService>().To<RegistrationAndAuthorizationService>();
             Bind<IFindBookService>().To<FindBookService>();
             Bind<IManageBookService>().To<ManageBookService>();
-            Bind<IRegistrationService>().To<RegistrationService>();
         }
     }
 }

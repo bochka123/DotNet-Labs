@@ -10,3 +10,6 @@ F:\KPI\5 семестр\.net\WebLibraryAppMVC\WebLibraryAppMVC.DAL\bin\Debug\Ent
 F:\KPI\5 семестр\.net\WebLibraryAppMVC\WebLibraryAppMVC.DAL\obj\Debug\WebLibraryAppMVC.DAL.csproj.CopyComplete
 F:\KPI\5 семестр\.net\WebLibraryAppMVC\WebLibraryAppMVC.DAL\obj\Debug\WebLibraryAppMVC.DAL.dll
 F:\KPI\5 семестр\.net\WebLibraryAppMVC\WebLibraryAppMVC.DAL\obj\Debug\WebLibraryAppMVC.DAL.pdb
+F:\KPI\5 семестр\.net\WebLibraryAppMVC\WebLibraryAppMVC.DAL\obj\Debug\WebLibraryAppMVC.DAL.Migrations.FirstMigration.resources
+F:\KPI\5 семестр\.net\WebLibraryAppMVC\WebLibraryAppMVC.DAL\obj\Debug\WebLibraryAppMVC.DAL.csproj.GenerateResource.cache
+F:\KPI\5 семестр\.net\WebLibraryAppMVC\WebLibraryAppMVC.DAL\obj\Debug\WebLibraryAppMVC.DAL.Migrations.Deletingfake.resources

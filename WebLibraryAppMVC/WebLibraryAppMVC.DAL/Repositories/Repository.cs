@@ -9,7 +9,7 @@ using WebLibraryAppMVC.DAL.EF;
 using WebLibraryAppMVC.DAL.Entities;
 using WebLibraryAppMVC.DAL.Interfaces;
 
-namespace WebLibraryAppMVC.DAL.Repoositories
+namespace WebLibraryAppMVC.DAL.Repositories
 {
     class Repository<T> : IRepository<T> where T : class
     {

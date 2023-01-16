@@ -6,7 +6,7 @@ using System.Text;
 using System.Threading.Tasks;
 using WebLibraryAppMVC.BLL.DTO;
 using WebLibraryAppMVC.BLL.Interfaces;
-using WebLibraryAppMVC.DAL.Repoositories;
+using WebLibraryAppMVC.DAL.Repositories;
 using WebLibraryAppMVC.DAL.Entities;
 using WebLibraryAppMVC.BLL.Infrastructure;
 

@@ -1,0 +1,17 @@
+﻿body {
+    background-color: #86f0ff;
+}
+h2{
+    text-align: center;
+}
+.container{
+    display: flex;
+    justify-content: space-around;
+    height: 60%;
+}
+.authorization form{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: center;
+}

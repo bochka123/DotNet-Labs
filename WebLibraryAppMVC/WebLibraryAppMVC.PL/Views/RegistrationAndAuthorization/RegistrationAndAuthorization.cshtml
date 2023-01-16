@@ -1,0 +1,41 @@
+﻿@model WebLibraryAppMVC.PL.Models.UserViewModel
+@{
+    ViewBag.Title = "RegistrationAndAuthorization";
+}
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>@ViewBag.Title</title>
+    @Styles.Render("~/Content/defaultCss")
+</head>
+<body>
+    <h2>Registration and authorization</h2>
+    <div class="container">
+        <div class="authorization">
+            @using (Html.BeginForm("Login", "RegistrationAndAuthorization"))
+                {
+            @Html.TextBoxFor(model => model.Login, new { placeholder = "Login", @type = "name" })<br>
+            @Html.TextBoxFor(model => model.Password, new { placeholder = "Password", @type = "password" })<br>
+            <input type="submit" name="login" value="Login" />
+                }
+        </div>
+        <div class="registration">
+
+            @using (Html.BeginForm("Register", "RegistrationAndAuthorization"))
+                {
+            @Html.TextBoxFor(model => model.FirstName, new { placeholder = "First name", @type = "name" })<br>
+            @Html.TextBoxFor(model => model.SecondName, new { placeholder = "Second name", @type = "name" })<br>
+            @Html.TextBoxFor(model => model.Login, new { placeholder = "Login", @type = "name" })<br>
+            @Html.TextBoxFor(model => model.Password, new { placeholder = "Password", @type = "password" })<br>
+            <input type="submit" name="register" value="Register" />
+                }
+        </div>
+    </div>
+    @if (!string.IsNullOrWhiteSpace(ViewBag.Result))
+    {
+    <h3 align="center">@ViewBag.Result</h3>
+    }
+</body>
+</html>
