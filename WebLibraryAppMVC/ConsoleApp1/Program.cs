@@ -14,10 +14,15 @@ namespace ConsoleApp1
         static void Main(string[] args)
         {
             IUnitOfWork unitOfWork = new EFUnitOfWork();
-            Book book = unitOfWork.Book.Get(8);
-            book.BookTopics.Add(unitOfWork.BookTopic.Get(1));
-            unitOfWork.Book.Update(book);
-            unitOfWork.Save();
+            var topics = unitOfWork.Book.Get(1).BookTopics;
+            foreach (var topic in topics)
+            {
+                Console.WriteLine(topic.Topic);
+            }
+            //UserCard userCard = unitOfWork.UserCard.Get(1);
+            //userCard.Books.Add(unitOfWork.Book.Get(1));
+            //unitOfWork.UserCard.Update(userCard);
+            //unitOfWork.Save();
             
         }
     }

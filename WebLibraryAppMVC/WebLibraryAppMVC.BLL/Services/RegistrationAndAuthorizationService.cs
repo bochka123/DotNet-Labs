@@ -104,7 +104,7 @@ namespace WebLibraryAppMVC.BLL.Services
             }
             else
             {
-                throw new ValidationException(password, "");
+                throw new ValidationException("Password is wrong", "");
             }
         }
         public void DeleteUser(int id)

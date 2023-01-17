@@ -26,7 +26,7 @@ namespace WebLibraryAppMVC.PL
             //          "~/Content/bootstrap.css",
             //          "~/Content/site.css"));
             bundles.Add(new StyleBundle("~/Content/defaultCss").Include(
-                "~/Content/DefaultStyle.css"
+                "~/Content/DefaultStyles.css"
                 ));
         }
     }

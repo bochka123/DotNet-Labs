@@ -1,0 +1,33 @@
+﻿@model WebLibraryAppMVC.PL.Models.BookViewModel
+@{
+    ViewBag.Title = "AddBook";
+    string login = ViewBag.Login;
+}
+
+<h2>Add book</h2>
+
+<nav>
+    <form method="post" action="/Main/Main?login=@ViewBag.Login">
+        <input type="submit" name="mainMenu" value="Main menu" />
+    </form>
+</nav>
+
+<div class="addBook">
+
+    @using (Html.BeginForm("AddNewBook", "AddBook", new { login = ViewBag.Login}))
+            {
+    <p>Authors</p>
+    @Html.TextBoxFor(model => model.Authors, new { placeholder = "Authors", @type = "name" })
+    <p>Book name</p>
+    @Html.TextBoxFor(model => model.Name, new { placeholder = "Book name", @type = "name" })
+    <p>Book topics</p>
+    @Html.TextBoxFor(model => model.BookTopics, new { placeholder = "Topics", @type = "name" })
+    <p>Number of examples</p>
+    @Html.TextBoxFor(model => model.NumberOfAvailable, new { placeholder = "1", @type = "number" })
+    <input type="submit" name="addBook" value="Add new book" />
+            }
+</div>
+@if (!string.IsNullOrWhiteSpace(ViewBag.Result))
+{
+<h3 align="center">@ViewBag.Result</h3>
+}

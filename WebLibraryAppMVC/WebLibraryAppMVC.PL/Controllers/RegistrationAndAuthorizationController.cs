@@ -7,8 +7,6 @@ using WebLibraryAppMVC.PL.Models;
 using WebLibraryAppMVC.BLL.Infrastructure;
 using WebLibraryAppMVC.BLL.Interfaces;
 using WebLibraryAppMVC.BLL.DTO;
-using Ninject;
-using Ninject.Modules;
 
 namespace WebLibraryAppMVC.PL.Controllers
 {
@@ -19,20 +17,26 @@ namespace WebLibraryAppMVC.PL.Controllers
         {
             this.service = service;
         }
-        public ActionResult RegistrationAndAuthorization()
+        public ActionResult RegistrationAndAuthorization(string login)
         {
             return View();
         }
+        [HttpPost]
         public ActionResult Register(UserViewModel userViewModel)
         {
             string result = string.Empty;
 
-            if (userViewModel.FirstName == null ||
-                userViewModel.SecondName == null ||
-                userViewModel.Login == null ||
-                userViewModel.Password == null)
+            if (ModelState.IsValid
+                //userViewModel.FirstName == null ||
+                //userViewModel.SecondName == null ||
+                //userViewModel.Login == null ||
+                //userViewModel.Password == null
+                )
             {
-                result = "Empty fields";
+                //Way one return view from with cirrent instance of model
+                //Way two return ModelStateDetails - bad way
+                //result = "Empty fields";
+                ModelState.Keys.Contains(nameof(userViewModel.Login)).ToString();
                 ViewBag.Result = result;
                 return View("RegistrationAndAuthorization");
             }

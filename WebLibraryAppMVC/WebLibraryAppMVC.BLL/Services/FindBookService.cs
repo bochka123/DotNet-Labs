@@ -32,6 +32,10 @@ namespace WebLibraryAppMVC.BLL.Services
                 {
                     Id = a.Id,
                     Name = a.Name
+                }),
+                BookTopics = book.BookTopics.Select(a => new BookTopicDTO
+                {
+                    Topic = a.Topic
                 })
             });
         }

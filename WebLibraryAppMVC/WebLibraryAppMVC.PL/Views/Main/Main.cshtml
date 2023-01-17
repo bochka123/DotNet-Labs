@@ -1,18 +1,74 @@
-﻿
+﻿@model WebLibraryAppMVC.PL.Models.FindBookModel
+@using WebLibraryAppMVC.BLL.DTO;
 @{
     ViewBag.Title = "Main";
+    string login = ViewBag.Login;
+    string result = ViewBag.Result;
+    List<BookDTO> allBooks = ViewBag.AllBooks;
 }
 
-<!DOCTYPE html>
-<html>
-<head>
-    <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>@ViewBag.Title</title>
-    @Styles.Render("~/Content/defaultCss")
-</head>
-<body>
-    <h2>Main</h2>
-    
-</body>
-</html>
+<h2>Main</h2>
+
+<nav>
+    <form method="post" action="/AddBook/AddBook?login=@ViewBag.Login">
+        <input type="submit" name="addBook" value="Add book" />
+    </form>
+
+    <div>
+        <form method="post" action="/RegistrationAndAuthorization/RegistrationAndAuthorization">
+            <input type="submit" name="logOut" value="Log out" />
+        </form>
+        <form method="post" action="/Profile/Profile?login=@ViewBag.Login">
+            <input type="submit" name="profile" value="@ViewBag.Login" />
+        </form>
+    </div>
+</nav>
+<div class="find">
+    @using (Html.BeginForm("Find", "Main", new { login = ViewBag.Login}))
+                {
+    @Html.TextBoxFor(model => model.FindString, new { placeholder = "Type selected name", @type = "text" })
+    <div>
+        @Html.RadioButtonFor(model => model.Type, "Name")
+        <span>Name</span>  <br />
+        @Html.RadioButtonFor(model => model.Type, "Author")
+        <span>Author</span>  <br />
+        @Html.RadioButtonFor(model => model.Type, "BookTopic")
+        <span>Book topic</span>
+    </div>
+    <input type="submit" name="findBook" value="Find" />
+                }
+</div>
+<main>
+    @{
+        foreach(var book in ViewBag.AllBooks){
+            string authors = "";
+            string topics = "";
+            foreach(var bookAuthor in book.Authors){
+                authors += $"{bookAuthor.Name} ";
+            }
+            foreach(var bookTopic in book.BookTopics){
+                topics += $"{bookTopic.Topic} ";
+            }
+        <div>
+            <div>
+                <h3>@book.Name</h3>
+                <h3>@book.NumberOfAvailable</h3>
+                <h3>@authors</h3>
+                <h3>@topics</h3>
+            </div>
+            <div class="forms">
+                <form method="post" action="GiveBook/Main?login=@ViewBag.Login&bookName=@book.Name">
+                    <input type="submit" name="giveBook" value="Give book" />
+                </form>
+                <form method="post" action="TakeBook/Main?login=@ViewBag.Login&bookName=@book.Name">
+                    <input type="submit" name="takeBook" value="Take book" />
+                </form>
+            </div>
+        </div>
+        }
+    }
+</main>
+@if (!string.IsNullOrWhiteSpace(ViewBag.Result))
+{
+<h3 align="center">@ViewBag.Result</h3>
+}

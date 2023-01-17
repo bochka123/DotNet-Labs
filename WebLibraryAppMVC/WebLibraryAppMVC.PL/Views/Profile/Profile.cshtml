@@ -1,0 +1,28 @@
+﻿@{
+    ViewBag.Title = "Profile";
+    string login = ViewBag.Login;
+   
+}
+
+<h2>Profile</h2>
+
+<nav>
+    <form method="post" action="/Main/Main?login=@ViewBag.Login">
+        <input type="submit" name="mainMenu" value="Main menu" />
+    </form>
+
+    <div>
+        <form method="post" action="/Profile/DeleteAccount?login=@ViewBag.Login">
+            <input type="submit" name="deleteAccount" value="Delete account" />
+        </form>
+        <form method="post" action="/RegistrationAndAuthorization/RegistrationAndAuthorization">
+            <input type="submit" name="logOut" value="Log out" />
+        </form>
+    </div>
+</nav>
+
+<h1>Login: @login</h1>
+<h1>First name: @ViewBag.FirstName</h1>
+<h1>Second name: @ViewBag.SecondName</h1>
+<h1>Date of creating account: @ViewBag.DateOfMaking</h1>
+<h1>Books you have: @ViewBag.Books</h1>
